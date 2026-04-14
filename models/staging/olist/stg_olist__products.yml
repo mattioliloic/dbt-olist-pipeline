@@ -1,0 +1,34 @@
+models:
+- name: stg_olist__products
+  description: This model serves as a staging layer for product data, preparing it
+    for further transformations and analysis. It consolidates product information
+    from various sources, ensuring consistency and completeness before it is used
+    in downstream models.
+
+  columns:
+  - name: product_id
+    description: A unique identifier for each product.
+
+  - name: product_category_name
+    description: The name of the category to which the product belongs.
+
+  - name: product_name_length
+    description: The length of the product name, measured in characters.
+
+  - name: product_description_length
+    description: The length of the product description, measured in characters.
+
+  - name: product_photos_qty
+    description: The number of photos associated with the product.
+
+  - name: product_weight_g
+    description: The weight of the product in grams.
+
+  - name: product_length_cm
+    description: The length of the product in centimeters.
+
+  - name: product_height_cm
+    description: The height of the product in centimeters.
+    
+  - name: product_width_cm
+    description: The width of the product in centimeters.

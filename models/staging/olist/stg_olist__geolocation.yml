@@ -1,0 +1,20 @@
+models:
+- name: stg_olist__geolocation
+  description: This model provides geolocation data for various locations, which can
+    be used to map and analyze geographical distribution and trends.
+
+  columns:
+  - name: geolocation_id
+    description: A unique identifier for each geolocation entry.
+
+  - name: latitude
+    description: The latitude coordinate of the geolocation.
+
+  - name: longitude
+    description: The longitude coordinate of the geolocation.
+
+  - name: city
+    description: The city associated with the geolocation.
+    
+  - name: state
+    description: The state associated with the geolocation.

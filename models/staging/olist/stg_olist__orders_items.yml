@@ -1,0 +1,27 @@
+models:
+- name: stg_olist__orders_items
+  description: This model consolidates order and item data from the Olist platform,
+    providing a comprehensive view of each order and its associated items. It is used
+    to analyze order details, item specifics, and overall sales performance.
+
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+
+  - name: item_id
+    description: A unique identifier for each item within an order.
+
+  - name: product_id
+    description: The identifier for the product associated with the item.
+
+  - name: seller_id
+    description: The identifier for the seller of the item.
+
+  - name: shipping_limit_date
+    description: The deadline by which the item should be shipped.
+
+  - name: price
+    description: The price of the item.
+    
+  - name: freight_value
+    description: The cost of shipping the item.
