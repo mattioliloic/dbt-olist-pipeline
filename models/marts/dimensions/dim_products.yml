@@ -1,0 +1,32 @@
+models:
+- name: dim_products
+  description: This model provides a detailed view of products, including their attributes
+    and classifications, to support product-related analysis and reporting.
+
+  columns:
+  - name: product_id
+    description: A unique identifier for each product.
+
+  - name: category
+    description: The category to which the product belongs.
+
+  - name: name_length
+    description: The length of the product name, measured in characters.
+
+  - name: description_length
+    description: The length of the product description, measured in characters.
+
+  - name: photos_count
+    description: The number of photos associated with the product.
+
+  - name: weight_grams
+    description: The weight of the product in grams.
+
+  - name: length_cm
+    description: The length of the product in centimeters.
+
+  - name: height_cm
+    description: The height of the product in centimeters.
+    
+  - name: width_cm
+    description: The width of the product in centimeters.

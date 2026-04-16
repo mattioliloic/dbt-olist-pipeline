@@ -1,0 +1,21 @@
+models:
+- name: dim_sellers
+  description: This model provides a comprehensive view of sellers, including their
+    unique identifiers, attributes, and related metrics. It is designed to support
+    analysis and reporting on seller performance and characteristics.
+
+  columns:
+  - name: seller_id
+    description: A unique identifier for each seller.
+
+  - name: zipcode
+    description: A unique prefix for each zipcode.
+
+  - name: city
+    description: The city location of the seller.
+
+  - name: state
+    description: The state location of the seller.
+
+  - name: address
+    description: The full address of the seller location.

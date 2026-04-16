@@ -1,0 +1,26 @@
+models:
+- name: dim_geolocation
+  description: This model provides detailed information about geographical locations,
+    which can be used for mapping, analysis, and reporting purposes. It serves as
+    a reference for location-based data, enabling users to associate events or entities
+    with specific geographical areas.
+
+  columns:
+  - name: geolocation_id
+    description: A unique identifier for each geographical location.
+
+  - name: latitude
+    description: The latitude coordinate of the geographical location.
+
+  - name: longitude
+    description: The longitude coordinate of the geographical location.
+
+  - name: gps
+    description: The coordinates of the geographical location in a geo format.
+
+  - name: city
+    description: The name of the city for the geographical location.
+
+  - name: state
+    description: The name of the state for the geographical location.
+
