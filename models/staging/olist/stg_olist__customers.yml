@@ -1,0 +1,15 @@
+models:
+  - name: stg_olist__customers
+    description: The grain of this table is one unique customer per row.
+    columns:
+      - name: customer_id
+        description: Primary key for the customer table
+
+      - name: customer_zip_code_prefix
+        description: The zipcode prefix of the customer location
+
+      - name: customer_city
+        description: The city of the customer
+          
+      - name: customer_state
+        description: The state prefix of the customer
