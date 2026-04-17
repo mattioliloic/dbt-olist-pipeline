@@ -1,0 +1,20 @@
+models:
+- name: stg_olist__sellers
+  description: This model provides a staging layer for seller data from the Olist
+    platform. It is designed to prepare and organize seller information for further
+    analysis and reporting.
+
+  columns: 
+   - name: seller_id
+     description: A unique identifier for each seller.
+
+   - name: seller_zip_code_prefix
+     description: A unique prefix for each zipcode.
+
+   - name: seller_city
+     description: The city location of the seller.
+
+   - name: seller_state
+     description: The state location of the seller.
+
+

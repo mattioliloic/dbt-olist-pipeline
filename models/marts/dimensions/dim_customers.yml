@@ -1,0 +1,21 @@
+models:
+- name: dim_customers
+  description: This model provides a comprehensive view of customer data, consolidating
+    information from various sources to facilitate customer analysis and reporting.
+
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer.
+
+  - name: zipcode
+    description: The zipcode of the customer.
+
+  - name: city
+    description: The city of the customer.
+
+  - name: state
+    description: The state of the customer.
+
+  - name: address
+    description: The complete address of the customer.
+

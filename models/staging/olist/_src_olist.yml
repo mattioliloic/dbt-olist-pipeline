@@ -1,0 +1,13 @@
+sources:
+  - name: olist_data
+    database: olist
+    schema: public
+    tables:
+      - name: customers
+      - name: orders
+      - name: geolocation
+      - name: order_items
+      - name: order_reviews
+      - name: payments  
+      - name: products
+      - name: sellers
