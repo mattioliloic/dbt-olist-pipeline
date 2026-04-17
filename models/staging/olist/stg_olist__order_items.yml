@@ -1,5 +1,5 @@
 models:
-- name: stg_olist__orders_items
+- name: stg_olist__order_items
   description: This model consolidates order and item data from the Olist platform,
     providing a comprehensive view of each order and its associated items. It is used
     to analyze order details, item specifics, and overall sales performance.

@@ -1,0 +1,29 @@
+models:
+- name: dim_reviews
+  description: This model provides a detailed view of order reviews, capturing
+    essential information such as review content, ratings, and associated metadata.
+ 
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+
+  - name: review_id
+    description: A unique identifier for each review.
+
+  - name: score
+    description: The rating given by the customer, typically on a scale from 1 to 5.
+
+  - name: comment_title
+    description: The comment title of the order being reviewed.
+
+  - name: comment_message
+    description: The comment message of the order being reviewed.
+
+  - name: review_content
+    description: The text content of the customer's review.
+
+  - name: created_at
+    description: The timestamp when the review was created, in UTC.
+
+  - name: answer_at
+    description: The timestamp when the review has been answered by the seller, in UTC.
