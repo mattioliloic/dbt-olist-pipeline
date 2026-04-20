@@ -28,6 +28,6 @@ with
 
     select * from final
 
-{% if is_incremental() %}
-    where purchased_at > select(max(purchased_at) from {{ this }})
-{% endif %}
+    {% if is_incremental() %}
+        where purchased_at > (select max(purchased_at) from {{ this }})
+    {% endif %}
