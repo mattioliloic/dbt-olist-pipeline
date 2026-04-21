@@ -2,6 +2,12 @@ models:
 - name: dim_products
   description: This model provides a detailed view of products, including their attributes
     and classifications, to support product-related analysis and reporting.
+  latest_version: 2
+  versions:
+    - v: 2
+    - v: 1
+      config: 
+      deprecation_date: '2026-12-31'
 
   columns:
   - name: product_id
