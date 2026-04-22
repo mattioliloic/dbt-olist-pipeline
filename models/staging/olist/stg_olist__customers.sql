@@ -7,7 +7,9 @@ with source as (
 transformed as (
 
     select 
-        customer_unique_id as customer_id,
+
+        distinct customer_unique_id as unique_id,
+        customer_id,
         customer_zip_code_prefix as zipcode,
         customer_city as city,
         customer_state as state,

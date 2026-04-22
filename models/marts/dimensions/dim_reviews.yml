@@ -4,11 +4,16 @@ models:
     essential information such as review content, ratings, and associated metadata.
  
   columns:
+  - name: review_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the review_id and order_id columns.
+    tests:
+      - unique
+      - not_null
+
   - name: order_id
     description: A unique identifier for each order.
-
-  - name: review_id
-    description: A unique identifier for each review.
+    tests:
+      - not_null
 
   - name: score
     description: The rating given by the customer, typically on a scale from 1 to 5.

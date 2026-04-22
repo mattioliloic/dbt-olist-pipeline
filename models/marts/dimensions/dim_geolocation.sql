@@ -6,7 +6,7 @@ final as (
 
     select 
         
-        geolocation.geolocation_id,
+        geolocation.geolocation_pk,
         round(geolocation.latitude, 5) as latitude,
         round(geolocation.longitude, 5) as longitude,
         

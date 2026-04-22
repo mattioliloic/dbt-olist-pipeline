@@ -7,12 +7,22 @@ models:
   columns:
   - name: order_id
     description: A unique identifier for each order.
+    tests:
+      - unique
+      - not_null
 
   - name: customer_id
     description: The identifier for the customer who placed the order.
+    tests:
+      - unique
+      - not_null
 
-  - name: order_status
-    description: The current status of the order, such as delivered, shipped, or canceled.
+  - name: status
+    description: "{{ doc('status') }}"
+    data_tests:
+     - accepted_values:
+         arguments: 
+           values: ['canceled', 'delivered', 'invoiced', 'shipped','approved','processing','unavailable','created']
 
   - name: order_purchase_timestamp
     description: The timestamp when the order was purchased.

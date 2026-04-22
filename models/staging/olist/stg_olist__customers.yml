@@ -3,7 +3,15 @@ models:
     description: The grain of this table is one unique customer per row.
     columns:
       - name: customer_id
-        description: Primary key for the customer table
+        description: Key to the orders dataset. Each order has a unique customer_id.
+        tests:
+        - unique
+        - not_null
+
+      - name: unique_id
+        description: Identifier of a customer.
+        tests:
+        - not_null
 
       - name: customer_zip_code_prefix
         description: The zipcode prefix of the customer location

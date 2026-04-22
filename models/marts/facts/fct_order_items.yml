@@ -8,13 +8,7 @@ models:
       enforced: true
 
   columns:
-  - name: order_item_pk
-    description: A unique identifier for each order item.
-    data_type: string
-    tests:
-      - unique
-      - not_null
-
+ 
   - name: order_id
     description: The identifier for the order to which this item belongs.
     data_type: string

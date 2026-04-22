@@ -6,6 +6,7 @@ final as (
     
     select 
 
+        customers.unique_id,
         customers.customer_id,
         customers.zipcode,
         upper(customers.city) as city,

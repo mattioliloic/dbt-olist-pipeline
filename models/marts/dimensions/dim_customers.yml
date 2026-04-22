@@ -6,6 +6,9 @@ models:
   columns:
   - name: customer_id
     description: A unique identifier for each customer.
+    tests:
+      - unique
+      - not_null
 
   - name: zipcode
     description: The zipcode of the customer.

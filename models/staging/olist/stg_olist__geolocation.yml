@@ -4,14 +4,25 @@ models:
     be used to map and analyze geographical distribution and trends.
 
   columns:
-  - name: geolocation_id
-    description: A unique identifier for each geolocation entry.
+  - name: geolocation_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the geolocation_zip_code_prefix, the latitude, longitude, city and state columns.
+    tests:
+      - unique
+      - not_null
+
+  - name: zipcode
+    description: First 5 digits of zip code.
+    tests:
+      - not_null
 
   - name: latitude
     description: The latitude coordinate of the geolocation.
 
   - name: longitude
     description: The longitude coordinate of the geolocation.
+
+  - name: gps_coordinates
+    description: Coordinates of the location, using the lat and long values.
 
   - name: city
     description: The city associated with the geolocation.

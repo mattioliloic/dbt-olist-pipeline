@@ -4,8 +4,16 @@ models:
     providing a structured view of payment transactions for further analysis and reporting.
 
   columns:
+  - name: payment_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the order_id and payment_sequential columns.
+    tests:
+      - unique
+      - not_null
+
   - name: order_id
-    description: The identifier for the order associated with the payment.
+    description: A unique identifier of an order.
+    tests:
+      - not_null
 
   - name: payment_sequential
     description: The sequence number of the payment within the order.

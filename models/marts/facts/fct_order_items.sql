@@ -10,11 +10,10 @@ with
 
         select 
 
-            {{ dbt_utils.generate_surrogate_key(['orders.order_id', 'order_items.item_id']) }} as order_item_pk,
             orders.order_id,
             orders.customer_id,
             order_items.seller_id,
-            order_items.price as price,
+            order_items.price,
             order_items.freight_amount as freight,
             order_items.price + order_items.freight_amount as total_amount,
             orders.purchased_at as purchased_at,
@@ -23,7 +22,7 @@ with
 
         from orders 
         join order_items on order_items.order_id = orders.order_id 
-
+        
     )
 
     select * from final
