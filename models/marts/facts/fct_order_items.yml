@@ -9,6 +9,15 @@ models:
 
   columns:
  
+  - name: order_items_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the order_item_id and order_id columns.
+    data_type: string
+    tests:
+    - relationships:
+        arguments:
+          to: ref('stg_olist__order_items')
+          field: order_items_pk
+
   - name: order_id
     description: The identifier for the order to which this item belongs.
     data_type: string
@@ -35,6 +44,15 @@ models:
         arguments:
           to: ref('dim_sellers')
           field: seller_id
+
+  - name: product_id
+    description: The identifier for the product of the item ordered.
+    data_type: string
+    tests:
+    - relationships:
+        arguments:
+          to: ref('dim_products')
+          field: products_id
 
   - name: price
     data_type: numeric(10,2)

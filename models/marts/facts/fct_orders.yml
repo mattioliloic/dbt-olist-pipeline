@@ -1,0 +1,41 @@
+models:
+- name: fct_orders
+  description: This model aggregates order data to provide insights into customer
+    purchases. It combines order items and order details to calculate the total number
+    of items and the total order amount for each order, grouped by order ID, customer
+    ID, and purchase date.
+  config: 
+    contract: 
+      enforced: true
+
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+    data_type: string
+    tests:
+    - relationships:
+        arguments:
+          to: ref('stg_olist__order_items')
+          field: order_id
+
+  - name: customer_id
+    description: The identifier for the customer who made the purchase.
+    data_type: string
+    tests:
+    - relationships:
+        arguments:
+          to: ref('stg_olist__orders')
+          field: customer_id
+
+  - name: purchased_at
+    description: The timestamp when the order was made.
+    data_type: timestamp_ntz
+
+  - name: nb_items
+    description: The total number of items in the order.
+    data_type: numeric(10,2)
+
+  - name: total_order_amount
+    description: The total monetary value of the order, including item prices and
+      freight charges.
+    data_type: numeric(10,2)
