@@ -7,6 +7,7 @@ with source as (
 transformed as (
 
     select 
+
         seller_id,
         seller_zip_code_prefix as zipcode,
         seller_city as city,

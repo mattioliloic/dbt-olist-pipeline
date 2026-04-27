@@ -7,6 +7,9 @@ models:
   columns: 
    - name: seller_id
      description: A unique identifier for each seller.
+     tests:
+      - unique
+      - not_null
 
    - name: seller_zip_code_prefix
      description: A unique prefix for each zipcode.

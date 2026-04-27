@@ -1,0 +1,6 @@
+select 
+    order_id,
+    delivered_to_customer_at,
+    purchased_at
+from {{ ref('stg_olist__orders') }}
+where delivered_to_customer_at < purchased_at

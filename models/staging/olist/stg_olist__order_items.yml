@@ -5,17 +5,31 @@ models:
     to analyze order details, item specifics, and overall sales performance.
 
   columns:
+  - name: order_items_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the order_item_id and order_id columns.
+    tests:
+      - unique
+      - not_null
+
   - name: order_id
     description: A unique identifier for each order.
+    tests:
+      - not_null
 
-  - name: item_id
-    description: A unique identifier for each item within an order.
+  - name: count_items
+    description: A sequential number identifying number of items included in the same order.
+    tests:
+      - not_null
 
   - name: product_id
     description: The identifier for the product associated with the item.
+    tests:
+      - not_null
 
   - name: seller_id
     description: The identifier for the seller of the item.
+    tests:
+      - not_null
 
   - name: shipping_limit_date
     description: The deadline by which the item should be shipped.

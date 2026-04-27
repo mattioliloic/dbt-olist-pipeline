@@ -12,6 +12,9 @@ models:
   columns:
   - name: product_id
     description: A unique identifier for each product.
+    tests:
+      - unique
+      - not_null
 
   - name: category
     description: The category to which the product belongs.

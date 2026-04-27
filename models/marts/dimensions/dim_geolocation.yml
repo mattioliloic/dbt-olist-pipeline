@@ -6,8 +6,11 @@ models:
     with specific geographical areas.
 
   columns:
-  - name: geolocation_id
-    description: A unique identifier for each geographical location.
+  - name: geolocation_pk
+    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table.  Created from the geolocation_zip_code_prefix, the latitude and longitude columns.
+    tests:
+      - unique
+      - not_null
 
   - name: latitude
     description: The latitude coordinate of the geographical location.

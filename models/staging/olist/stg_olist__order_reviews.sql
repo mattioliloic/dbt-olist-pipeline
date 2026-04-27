@@ -7,6 +7,7 @@ with source as (
 transformed as (
 
     select 
+        {{dbt_utils.generate_surrogate_key(['review_id', 'order_id'])}} as review_pk,
         review_id,
         order_id,
         review_score as score,
