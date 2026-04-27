@@ -7,6 +7,11 @@ models:
     contract: 
       enforced: true
 
+  data_tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "price + freight = total_amount"
+
   columns:
  
   - name: order_items_pk
@@ -52,7 +57,7 @@ models:
     - relationships:
         arguments:
           to: ref('dim_products')
-          field: products_id
+          field: product_id
 
   - name: price
     data_type: numeric(10,2)
@@ -66,6 +71,13 @@ models:
     data_type: numeric(10,2)
     description: The total price for the quantity of the product ordered, calculated
       as quantity multiplied by price.
+    tests:
+      - dbt_expectations.expect_column_values_to_be_between:
+          arguments:
+            min_value: 0  
+            max_value: 100000
+            row_condition: "order_items_pk is not null" 
+            strictly: false 
   
   - name: purchased_at
     data_type: timestamp_ntz

@@ -34,6 +34,10 @@ models:
   - name: nb_items
     description: The total number of items in the order.
     data_type: numeric(10,2)
+    data_tests:
+    - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 1
 
   - name: total_order_amount
     description: The total monetary value of the order, including item prices and
