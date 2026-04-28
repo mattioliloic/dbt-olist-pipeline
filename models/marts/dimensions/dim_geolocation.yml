@@ -27,3 +27,5 @@ models:
   - name: state
     description: The name of the state for the geographical location.
 
+  - name: region
+    description: The region to which the state belongs.

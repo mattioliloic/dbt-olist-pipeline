@@ -11,13 +11,16 @@ final as (
             order_item.order_id,
             orders.customer_id,
             orders.purchased_at,
+            {{ get_delivery_status('orders.estimated_delivery_at','orders.delivered_to_customer_at') }} as shipping_status,
             count(order_item.order_items_pk) as nb_items,
-            sum(order_item.price + order_item.freight_amount) as total_order_amount
+            sum(order_item.price + order_item.freight_amount) as total_amount_brl,
+            {{ convert_currency('total_amount_brl', 0.20) }} as total_amount_usd,
+            {{ convert_currency('total_amount_brl', 0.17) }} as total_amount_eur
         
         from orders
         join order_item on order_item.order_id = orders.order_id
 
-        group by order_item.order_id, orders.customer_id, orders.purchased_at
+        group by order_item.order_id, orders.customer_id, orders.purchased_at, shipping_status
 )
 
 select * from final
