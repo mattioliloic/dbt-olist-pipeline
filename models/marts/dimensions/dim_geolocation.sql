@@ -19,7 +19,8 @@ final as (
         )as gps,
 
         geolocation.city,
-        geolocation.state
+        geolocation.state as state,
+        {{ brazil_state_to_region('state') }} as region
 
     from geolocation
 

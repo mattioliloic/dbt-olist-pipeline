@@ -17,7 +17,7 @@ with
             order_items.freight_amount as freight,
             order_items.price + order_items.freight_amount as total_amount,
             orders.purchased_at as purchased_at,
-            datediff(day, order_items.shipping_limit_date, orders.delivered_to_customer_at) > 0 as is_late,
+            {{ days_between_dates('order_items.shipping_limit_date', 'orders.delivered_to_customer_at') }} > 0 as is_late,
             datediff(day, orders.purchased_at, orders.delivered_to_customer_at) as days_to_delivery
             
         from orders 

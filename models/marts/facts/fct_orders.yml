@@ -33,13 +33,28 @@ models:
 
   - name: nb_items
     description: The total number of items in the order.
-    data_type: numeric(10,2)
+    data_type: numeric(10)
     data_tests:
     - dbt_expectations.expect_column_values_to_be_between:
               arguments:
                 min_value: 1
 
-  - name: total_order_amount
-    description: The total monetary value of the order, including item prices and
+  - name: total_amount_brl
+    description: The total monetary value of the order in Reais, including item prices and
       freight charges.
     data_type: numeric(10,2)
+
+  - name: total_amount_usd
+    description: The total monetary value of the order in US dollar, including item prices and
+      freight charges.
+    data_type: numeric(10,2)
+
+  - name: total_amount_eur
+    description: The total monetary value of the order in Euros, including item prices and
+      freight charges.
+    data_type: numeric(10,2)
+
+  - name: shipping_status
+    description: Shows the status of an order, after being delivered
+    data_type: string
+         
