@@ -11,6 +11,7 @@ final as (
             order_item.order_id,
             orders.customer_id,
             orders.purchased_at,
+            orders.status,
             {{ get_delivery_status('orders.estimated_delivery_at','orders.delivered_to_customer_at') }} as shipping_status,
             count(order_item.order_items_pk) as nb_items,
             sum(order_item.price + order_item.freight_amount) as total_amount_brl,
@@ -20,7 +21,7 @@ final as (
         from orders
         join order_item on order_item.order_id = orders.order_id
 
-        group by order_item.order_id, orders.customer_id, orders.purchased_at, shipping_status
+        group by order_item.order_id, orders.customer_id, orders.purchased_at, orders.status, shipping_status
 )
 
 select * from final
