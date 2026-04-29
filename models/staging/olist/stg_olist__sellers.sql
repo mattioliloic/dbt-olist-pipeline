@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('olist_data', 'sellers') }}
+    select * from {{ ref('sellers_olist') }}
 
 ),
  
@@ -16,6 +16,7 @@ transformed as (
 
     from source
     
+    where dbt_valid_to = to_date('9999-12-31')
 ) 
 
 select * from transformed
