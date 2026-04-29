@@ -1,5 +1,5 @@
 select 
     order_id,
-    total_order_amount
+    total_amount_brl
 from {{ ref('fct_orders') }}
-where total_order_amount < 0
+where total_amount_brl < 0

@@ -3,20 +3,20 @@ macros:
     description: A macro that calculate the number of days between two dates.
     arguments:
       - name: first 
-        type: timestamp_ntz 
+        type: string 
         description: The start date to start the comparaison
       - name : second
-        type: timestamp_ntz 
+        type: string 
         description: The second date to be compare with 
 
   - name: get_delivery_status
     description: A macro that shows the status of an order, after being delivered.
     arguments:
         - name: estimated_date 
-          type: timestamp_ntz 
+          type: string 
           description: The estimated delivery date 
         - name : actual_date
-          type: timestamp_ntz 
+          type: string 
           description: The date when the order has been delivered to the customer
           
   - name: brazil_state_to_region
