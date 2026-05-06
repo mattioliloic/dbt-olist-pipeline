@@ -6,7 +6,7 @@ models:
 
   columns:
   - name: seller_id
-    description: A unique identifier for each seller.
+    description: "{{ doc('seller_id')}}"
     tests:
       - unique
       - not_null

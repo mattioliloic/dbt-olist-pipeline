@@ -5,13 +5,13 @@ models:
  
   columns:
   - name: review_pk
-    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the review_id and order_id columns.
+    description: "{{ doc('review_pk')}}"
     tests:
       - unique
       - not_null
 
   - name: order_id
-    description: A unique identifier for each order.
+    description: "{{ doc('order_id')}}"
     tests:
       - not_null
 
