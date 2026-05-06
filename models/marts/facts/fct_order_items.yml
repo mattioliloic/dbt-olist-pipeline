@@ -15,7 +15,7 @@ models:
   columns:
  
   - name: order_items_pk
-    description: A technical primary key (surrogate key) generated to ensure the uniqueness of each row in this table. Created from the order_item_id and order_id columns.
+    description: "{{ doc('order_items_pk')}}"
     data_type: string
     tests:
     - relationships:
@@ -24,7 +24,7 @@ models:
           field: order_items_pk
 
   - name: order_id
-    description: The identifier for the order to which this item belongs.
+    description: "{{ doc('order_id')}}"
     data_type: string
     tests:
     - relationships:
@@ -33,7 +33,7 @@ models:
           field: order_id
 
   - name: customer_id
-    description: The identifier for the customer associated with this order item.
+    description: "{{ doc('customer_id')}}"
     data_type: string
     tests:
     - relationships:
@@ -42,7 +42,7 @@ models:
           field: customer_id
 
   - name: seller_id
-    description: The identifier for the seller of the item ordered.
+    description: "{{ doc('seller_id')}}"
     data_type: string
     tests:
     - relationships:
@@ -51,7 +51,7 @@ models:
           field: seller_id
 
   - name: product_id
-    description: The identifier for the product of the item ordered.
+    description: "{{ doc('product_id')}}"
     data_type: string
     tests:
     - relationships:

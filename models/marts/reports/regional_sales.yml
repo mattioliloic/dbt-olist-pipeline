@@ -1,0 +1,32 @@
+models:
+- name: regional_sales
+  description: This reports gives the total amount of the orders for a city and a state in the brazilian currency.
+
+  columns:
+  - name: CA
+    description: The revenue of all the orders for a city and state.
+    data_type: number
+
+  - name: city
+    description: The city name.
+    data_type: string
+
+  - name: state
+    description: The state name.
+    data_type: string
+
+  - name: state_map
+    description: The state name, modified with BR prefix, to be reconized by Google Maps as brazilian states.
+    data_type: string
+
+exposures:
+  - name: data_studio_regional_kpis
+    label: "Data Studio : Regional KPIs"
+    type: dashboard
+    url: "https://datastudio.google.com/u/0/datasources/f5ed5afd-1117-4062-81a4-c97a69530440" 
+    description: "Public dashboard showing revenue by region."
+    depends_on:
+      - ref('regional_sales')
+    owner:
+      name: "Mattioli Loïc"
+      email: "lmatlifts@gmail.com"

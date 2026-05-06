@@ -11,7 +11,7 @@ models:
 
   columns:
   - name: product_id
-    description: A unique identifier for each product.
+    description: "{{ doc('product_id')}}"
     tests:
       - unique
       - not_null

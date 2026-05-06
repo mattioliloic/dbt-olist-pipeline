@@ -10,7 +10,7 @@ models:
 
   columns:
   - name: order_id
-    description: A unique identifier for each order.
+    description: "{{ doc('order_id')}}"
     data_type: string
     tests:
     - relationships:
@@ -19,7 +19,7 @@ models:
           field: order_id
 
   - name: customer_id
-    description: The identifier for the customer who made the purchase.
+    description: "{{ doc('customer_id')}}"
     data_type: string
     tests:
     - relationships:

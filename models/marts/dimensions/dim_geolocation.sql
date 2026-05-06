@@ -18,6 +18,7 @@ final as (
             iff(longitude < 0, 'W', 'E')
         )as gps,
 
+        geolocation.zipcode,
         geolocation.city,
         geolocation.state as state,
         {{ brazil_state_to_region('state') }} as region
